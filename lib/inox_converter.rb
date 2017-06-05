@@ -10,27 +10,27 @@ module InoxConverter
 		converter.hello
 	end
 	
-	def self.convertCurrency(value, unit1, unit2)
+	def self.convertCurrency(valueToConvert, firstUnit, secondUnit)
 		puts "Currency"
 	end
 
-	def self.convertLenght(value, unit1, unit2)
+	def self.convertLenght(valueToConvert, firstUnit, secondUnit)
 		puts "Currency"
 	end
 
-	def self.convertVolume(value, unit1, unit2)
+	def self.convertVolume(valueToConvert, firstUnit, secondUnit)
 		puts "Volume"
 	end
 
-	def self.convertArea(value, unit1, unit2)
+	def self.convertArea(valueToConvert, firstUnit, secondUnit)
 		puts "Area"
 	end
 
-	def self.convertMass(value, unit1, unit2)
+	def self.convertMass(valueToConvert, firstUnit, secondUnit)
 		puts "Mass"
 	end
 
-	def self.convertTime(value, unit1, unit2)
+	def self.convertTime(valueToConvert, firstUnit, secondUnit)
 		puts "Time"
 	end
   
