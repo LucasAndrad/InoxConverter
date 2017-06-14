@@ -4,19 +4,15 @@ require "inox_converter/length"
 
 
 module InoxConverter
-
-	def self.getDictionary
-		# test inheritance
-		lengthConverter = Length.new()
-		lengthConverter.getDictionary
-	end
 	
 	def self.convertCurrency(valueToConvert, firstUnit, secondUnit)
 		puts "Currency"
 	end
 
 	def self.convertLenght(valueToConvert, firstUnit, secondUnit)
-		puts "Currency"
+		puts "Lenght convertion"
+		lengthConverter = Length.new()
+		lengthConverter.getInDictionary(valueToConvert)
 	end
 
 	def self.convertVolume(valueToConvert, firstUnit, secondUnit)
