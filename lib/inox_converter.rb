@@ -5,10 +5,10 @@ require "inox_converter/length"
 
 module InoxConverter
 
-	def self.hi
-		puts "hello from inoxconverter"
+	def self.getDictionary
+		# test inheritance
 		lengthConverter = Length.new()
-		lengthConverter.convert
+		lengthConverter.getDictionary
 	end
 	
 	def self.convertCurrency(valueToConvert, firstUnit, secondUnit)

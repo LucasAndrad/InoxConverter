@@ -1,10 +1,11 @@
 module InoxConverter
 	class Converter
 
-		@dictionary = 10
+		@dictionary
 
 		def initialize
 			puts "Initializing Converter"
+			@dictionary = 30
 		end
 
 		def convert
@@ -20,6 +21,10 @@ module InoxConverter
 		def addUnitInDictionary(newUnit, newRate)
 			# Non-optional implementation
 			raise NotImplementedError.new("Convert method not implemented")
+		end
+
+		def getDictionary
+			return @dictionary
 		end
 
 	end
