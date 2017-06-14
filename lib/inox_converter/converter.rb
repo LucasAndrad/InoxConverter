@@ -9,8 +9,8 @@ module InoxConverter
 		end
 
 		def convert(valueToConvert, firstUnit, secondUnit)
-			finalValue = valueToConvert * (getInDictionary(firstUnit) / getInDictionary(secondUnit))
-			return finalValue
+			finalValue = (valueToConvert.round(10) * (getInDictionary(firstUnit).round(10)) / getInDictionary(secondUnit).round(10))
+			return finalValue.round(10)
 		end
 
 		def getInDictionary(unit)
