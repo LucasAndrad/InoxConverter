@@ -1,16 +1,17 @@
 module InoxConverter
 	class Converter
 
-		@dictionary
+		private dictionary
 
 		def initialize
 			puts "Initializing Converter"
-			@dictionary = 30
+			Length.getDictionary
 		end
 
 		def convert
 			# Non-optional implementation
-			raise NotImplementedError.new("Convert method not implemented")
+			# raise NotImplementedError.new("Convert method not implemented")
+
 		end
 
 		def getInDictionary(unit)
@@ -23,8 +24,8 @@ module InoxConverter
 			raise NotImplementedError.new("Convert method not implemented")
 		end
 
-		def getDictionary
-			return @dictionary
+		def initDictionary
+			raise NotImplementedError.new("Dictionary not initialize")
 		end
 
 	end
