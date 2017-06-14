@@ -5,4 +5,4 @@
 
 gem build inox_converter.gemspec
 gem install ./inox_converter-0.1.0.gem
-irb
+irb -r 'inox_converter'
