@@ -8,10 +8,9 @@ module InoxConverter
 			self.initDictionary
 		end
 
-		def convert
-			# Non-optional implementation
-			# raise NotImplementedError.new("Convert method not implemented")
-
+		def convert(valueToConvert, firstUnit, secondUnit)
+			finalValue = valueToConvert * (getInDictionary(firstUnit) / getInDictionary(secondUnit))
+			return finalValue
 		end
 
 		def getInDictionary(unit)

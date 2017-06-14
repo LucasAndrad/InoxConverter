@@ -4,7 +4,7 @@ module InoxConverter
 		def initDictionary
       @dictionary = Hash.new
       @dictionary = {
-        "mm" => 0.01,
+        "mm" => 0.001,
         "m" => 1,
         "km" => 1000
       }

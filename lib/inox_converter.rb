@@ -9,10 +9,13 @@ module InoxConverter
 		puts "Currency"
 	end
 
+	# firstUnit = actual unit
+	# secondUnit = final unit
+	# returns the value converted
 	def self.convertLenght(valueToConvert, firstUnit, secondUnit)
 		puts "Lenght convertion"
 		lengthConverter = Length.new()
-		lengthConverter.getInDictionary(valueToConvert)
+		lengthConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.convertVolume(valueToConvert, firstUnit, secondUnit)
