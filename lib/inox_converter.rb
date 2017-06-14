@@ -1,7 +1,9 @@
 require "inox_converter/version"
 require "inox_converter/converter"
+require "inox_converter/area"
 require "inox_converter/length"
-
+require "inox_converter/mass"
+require "inox_converter/volume"
 
 module InoxConverter
 	
@@ -19,19 +21,26 @@ module InoxConverter
 	end
 
 	def self.convertVolume(valueToConvert, firstUnit, secondUnit)
-		puts "Volume"
+		puts "Volume convertion"
+		volumeConverter = Volume.new()
+		volumeConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.convertArea(valueToConvert, firstUnit, secondUnit)
-		puts "Area"
+		puts "Area convertion"
+		areaConverter = Area.new()
+		areaConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.convertMass(valueToConvert, firstUnit, secondUnit)
-		puts "Mass"
+		puts "Mass convertion"
+		massConverter = Mass.new()
+		massConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.convertTime(valueToConvert, firstUnit, secondUnit)
-		puts "Time"
+		puts "Time convertion: uninplemented"
+
 	end
   
 end
