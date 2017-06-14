@@ -1,6 +1,7 @@
 module InoxConverter
 	class Length < Converter
 
+    # base unit: meter
     def initDictionary
       @dictionary = Hash.new
       @dictionary = {
@@ -8,12 +9,12 @@ module InoxConverter
         "kilometer" => 1000,
         "hectometer" => 100,
         "hectometre" => 100,
-        "decimeter" => 10,
-        "decimetre" => 10,
+        "decameter" => 10,
+        "decametre" => 10,
         "metre" => 1,
         "meter" => 1,
-        "decameter" => 0.1,
-        "decametre" => 0.1,
+        "decimeter" => 0.1,
+        "decimetre" => 0.1,
         "centimetre" => 0.01,
         "centimeter" => 0.01,
         "milimetre" => 0.001,
