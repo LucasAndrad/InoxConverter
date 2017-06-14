@@ -1,16 +1,17 @@
 module InoxConverter
   class Volume < Converter
 
+    # base unit: liter
     def initDictionary
       @dictionary = Hash.new
       @dictionary = {
         "cubicmetre" => 1000,
-        "deciliter" => 10,
-        "decilitre" => 10,
+        "decaliter" => 10,
+        "decalitre" => 10,
         "litre" => 1,
         "liter" => 1,
-        "decaliter" => 0.1,
-        "decalitre" => 0.1,
+        "deciliter" => 0.1,
+        "decilitre" => 0.1,
         "centilitre" => 0.01,
         "centiliter" => 0.01,
         "mililitre" => 0.001,
