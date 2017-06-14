@@ -1,13 +1,14 @@
 require "inox_converter/version"
 require "inox_converter/converter"
+require "inox_converter/length"
 
 
 module InoxConverter
 
 	def self.hi
 		puts "hello from inoxconverter"
-		converter = Converter.new()
-		converter.hello
+		lengthConverter = Length.new()
+		lengthConverter.convert
 	end
 	
 	def self.convertCurrency(valueToConvert, firstUnit, secondUnit)
