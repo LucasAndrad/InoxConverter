@@ -6,7 +6,19 @@ require "inox_converter/mass"
 require "inox_converter/volume"
 
 module InoxConverter
-	
+
+	# Method just to test AddUnit, will be deleted in future 
+	def self.testAddUnit
+		length = Length.new()
+
+		# success case
+		length.addUnit("my unit", 10)
+
+		# fail case
+		#length.addUnit("milimetre", 10)
+		
+	end
+
 	def self.convertCurrency(valueToConvert, firstUnit, secondUnit)
 		puts "Currency"
 	end
@@ -40,7 +52,6 @@ module InoxConverter
 
 	def self.convertTime(valueToConvert, firstUnit, secondUnit)
 		puts "Time convertion: uninplemented"
-
 	end
   
 end

@@ -1,7 +1,7 @@
 module InoxConverter
 	class Converter
 
-		@dictionary
+		@dictionary = nil
 
 		def initialize
 			puts "Initializing Converter"
@@ -26,5 +26,38 @@ module InoxConverter
 			raise NotImplementedError.new("Dictionary not initialize")
 		end
 
+		# newUnit: name of the new unit to be added
+		# newRate: reason between new unit and base unit 
+		# (example: kilometer it's 1000x greater than meter, so the newRate should be 1000)
+		# returns bool - true if succeed, false if fails
+		def addUnit(newUnit, newRate)
+
+			if @dictionary.nil?
+				@dictionary = Hash.new()
+			else
+				# do nothing
+			end
+
+			# certify if the key doesn't exist
+			if !@dictionary.has_key?(newUnit)
+				@dictionary[newUnit] = newRate
+
+				# verify if the key has been added
+				if @dictionary.has_key?(newUnit)
+					puts "key #{newUnit} added"
+
+					# return @dictionary
+					return true
+				else
+					# throw exception
+					return false
+				end
+
+			else
+				puts "key #{newUnit} already exists"
+				return false
+			end
+
+		end
 	end
 end

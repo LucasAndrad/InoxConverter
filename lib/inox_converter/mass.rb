@@ -13,8 +13,7 @@ module InoxConverter
         "imperial ton" => 1.016**6,
         "us ton" => 907185,
         "stone" => 6350.29,
-        "pound" => 453.592,
-        "gram" => 28.3495
+        "pound" => 453.592
       }
     end
 		
