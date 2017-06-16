@@ -6,13 +6,12 @@ require "inox_converter/mass"
 require "inox_converter/volume"
 
 module InoxConverter
+	@length = Length.new()
 
 	# Method just to test AddUnit, will be deleted in future 
 	def self.testAddUnit
-		length = Length.new()
-
 		# success case
-		length.addUnit("my unit", 10)
+		@length.addUnit("my unit", 10)
 
 		# fail case
 		#length.addUnit("milimetre", 10)
@@ -28,8 +27,9 @@ module InoxConverter
 	# returns the value converted
 	def self.convertLenght(valueToConvert, firstUnit, secondUnit)
 		puts "Lenght convertion"
-		lengthConverter = Length.new()
-		lengthConverter.convert(valueToConvert, firstUnit, secondUnit)
+		# lengthConverter = Length.new()
+		# lengthConverter.convert(valueToConvert, firstUnit, secondUnit)
+		@length.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.convertVolume(valueToConvert, firstUnit, secondUnit)
