@@ -9,6 +9,8 @@ module InoxConverter
         "square kilometer" => 10**6,
         "square metre" => 1,
         "square meter" => 1,
+				"square centimeter"=> 10**-4,
+				"square centimetre"=> 10**-4,
         "square mile" => 2.59**6,
         "square yard" => 0.836127,
         "square foot" => 0.09290,
@@ -17,6 +19,6 @@ module InoxConverter
         "acre" => 4046.86
       }
     end
-		
+
   end
 end
