@@ -6,15 +6,18 @@ require "inox_converter/mass"
 require "inox_converter/volume"
 
 module InoxConverter
-	@length = Length.new()
+	@lengthConverter = Length.new()
+	@volumeConverter = Volume.new()
+	@areaConverter = Area.new()
+	@massConverter = Mass.new()
 
 	# Method just to test AddUnit, will be deleted in future 
 	def self.testAddUnit
 		# success case
-		@length.addUnit("my unit", 10)
+		@lengthConverter.addUnit("my unit", 10)
 
 		# fail case
-		#length.addUnit("milimetre", 10)
+		#lengthConverter.addUnit("milimetre", 10)
 		
 	end
 
@@ -28,26 +31,25 @@ module InoxConverter
 	def self.convertLenght(valueToConvert, firstUnit, secondUnit)
 		puts "Lenght convertion"
 		# lengthConverter = Length.new()
-		# lengthConverter.convert(valueToConvert, firstUnit, secondUnit)
-		@length.convert(valueToConvert, firstUnit, secondUnit)
+		@lengthConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.convertVolume(valueToConvert, firstUnit, secondUnit)
 		puts "Volume convertion"
-		volumeConverter = Volume.new()
-		volumeConverter.convert(valueToConvert, firstUnit, secondUnit)
+		#volumeConverter = Volume.new()
+		@volumeConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.convertArea(valueToConvert, firstUnit, secondUnit)
 		puts "Area convertion"
-		areaConverter = Area.new()
-		areaConverter.convert(valueToConvert, firstUnit, secondUnit)
+		#areaConverter = Area.new()
+		@areaConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.convertMass(valueToConvert, firstUnit, secondUnit)
 		puts "Mass convertion"
-		massConverter = Mass.new()
-		massConverter.convert(valueToConvert, firstUnit, secondUnit)
+		#massConverter = Mass.new()
+		@massConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.convertTime(valueToConvert, firstUnit, secondUnit)
