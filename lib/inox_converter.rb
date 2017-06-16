@@ -6,19 +6,15 @@ require "inox_converter/mass"
 require "inox_converter/volume"
 
 module InoxConverter
-	@lengthConverter = Length.new()
-	@volumeConverter = Volume.new()
-	@areaConverter = Area.new()
-	@massConverter = Mass.new()
 
 	# Method just to test AddUnit, will be deleted in future 
 	def self.testAddUnit
 		# success case
+		self.newLenghtInstance
 		@lengthConverter.addUnit("my unit", 10)
 
 		# fail case
 		#lengthConverter.addUnit("milimetre", 10)
-		
 	end
 
 	def self.convertCurrency(valueToConvert, firstUnit, secondUnit)
@@ -31,6 +27,7 @@ module InoxConverter
 	def self.convertLenght(valueToConvert, firstUnit, secondUnit)
 		puts "Lenght convertion"
 		# lengthConverter = Length.new()
+		self.newLenghtInstance
 		@lengthConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
@@ -54,6 +51,38 @@ module InoxConverter
 
 	def self.convertTime(valueToConvert, firstUnit, secondUnit)
 		puts "Time convertion: uninplemented"
+	end
+
+	def self.newLenghtInstance()
+		if @lengthConverter.nil?
+			@lengthConverter = Length.new()
+		else
+			# do nothing
+		end
+	end
+
+	def self.newVolumeInstance()
+		if @volumeConverter.nil?
+			@volumeConverter = Volume.new()
+		else
+			# do nothing
+		end
+	end
+
+	def self.newAreaInstance()
+		if @areaConverter.nil?
+			@areaConverter = Area.new()
+		else
+			# do nothing
+		end
+	end
+
+	def self.newMassInstance()
+		if @massConverter.nil?
+			@massConverter = Mass.new()
+		else
+			# do nothing
+		end
 	end
   
 end
