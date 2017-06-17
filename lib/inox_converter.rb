@@ -53,6 +53,27 @@ module InoxConverter
 		puts "Time convertion: uninplemented"
 	end
 
+	def self.addLenghtUnit(newUnit, newRate)
+		self.newLenghtInstance
+		@lengthConverter.addUnit(newUnit, newRate)
+	end
+
+	def self.addVolumeUnit(newUnit, newRate)
+		self.newVolumeInstance
+		@volumeConverter.addUnit(newUnit, newRate)
+	end
+
+	def self.addAreaUnit(newUnit, newRate)
+		self.newAreaInstance
+		@areaConverter.addUnit(newUnit, newRate)
+	end
+
+	def self.addMassUnit(newUnit, newRate)
+		self.newMassInstance
+		@massConverter.addUnit(newUnit, newRate)
+	end
+
+
 	def self.newLenghtInstance()
 		if @lengthConverter.nil?
 			@lengthConverter = Length.new()
