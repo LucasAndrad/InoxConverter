@@ -4,6 +4,7 @@ require "inox_converter/area"
 require "inox_converter/length"
 require "inox_converter/mass"
 require "inox_converter/volume"
+require "inox_converter/time"
 
 module InoxConverter
 
@@ -46,11 +47,15 @@ module InoxConverter
 	def self.convertMass(valueToConvert, firstUnit, secondUnit)
 		puts "Mass convertion"
 		#massConverter = Mass.new()
+		self.newMassInstance
 		@massConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.convertTime(valueToConvert, firstUnit, secondUnit)
-		puts "Time convertion: uninplemented"
+		puts "Time convertion"
+		#timeConverter = Time.new()
+		self.newTimeInstance
+		@timeConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.newLenghtInstance()
@@ -80,6 +85,14 @@ module InoxConverter
 	def self.newMassInstance()
 		if @massConverter.nil?
 			@massConverter = Mass.new()
+		else
+			# do nothing
+		end
+	end
+
+	def self.newTimeInstance()
+		if @timeConverter.nil?
+			@timeConverter = Time.new()
 		else
 			# do nothing
 		end
