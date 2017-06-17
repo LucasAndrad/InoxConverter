@@ -4,6 +4,8 @@ require "inox_converter/area"
 require "inox_converter/length"
 require "inox_converter/mass"
 require "inox_converter/volume"
+require "inox_converter/currency"
+require "inox_converter/currency_adapter"
 
 module InoxConverter
 
@@ -20,7 +22,9 @@ module InoxConverter
 	end
 
 	def self.convertCurrency(valueToConvert, firstUnit, secondUnit)
-		puts "Currency"
+		puts "Currency Conversion convertion"
+		currencyConverter = InoxConverter::CurrencyAdapter.new()
+		currencyConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	# firstUnit = actual unit
