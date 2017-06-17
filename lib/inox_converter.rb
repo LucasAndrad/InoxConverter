@@ -8,16 +8,6 @@ require "inox_converter/time"
 
 module InoxConverter
 
-	# Method just to test AddUnit, will be deleted in future 
-	def self.testAddUnit
-		# success case
-		self.newLenghtInstance
-		@lengthConverter.addUnit("my unit", 10)
-
-		# fail case
-		#lengthConverter.addUnit("milimetre", 10)
-	end
-
 	def self.convertCurrency(valueToConvert, firstUnit, secondUnit)
 		puts "Currency"
 	end
@@ -27,33 +17,28 @@ module InoxConverter
 	# returns the value converted
 	def self.convertLenght(valueToConvert, firstUnit, secondUnit)
 		puts "Lenght convertion"
-		# lengthConverter = Length.new()
 		self.newLenghtInstance
 		@lengthConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.convertVolume(valueToConvert, firstUnit, secondUnit)
 		puts "Volume convertion"
-		#volumeConverter = Volume.new()
 		@volumeConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.convertArea(valueToConvert, firstUnit, secondUnit)
 		puts "Area convertion"
-		#areaConverter = Area.new()
 		@areaConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.convertMass(valueToConvert, firstUnit, secondUnit)
 		puts "Mass convertion"
-		#massConverter = Mass.new()
 		self.newMassInstance
 		@massConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.convertTime(valueToConvert, firstUnit, secondUnit)
 		puts "Time convertion"
-		#timeConverter = Time.new()
 		self.newTimeInstance
 		@timeConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
