@@ -78,6 +78,11 @@ module InoxConverter
 		@massConverter.addUnit(newUnit, newRate)
 	end
 
+	def self.addTimeUnit(newUnit, newRate)
+		self.newTimeInstance
+		@timeConverter.addUnit(newUnit, newRate)
+	end
+
 
 	def self.newLenghtInstance()
 		if @lengthConverter.nil?
