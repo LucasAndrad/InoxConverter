@@ -6,8 +6,11 @@ module InoxConverter
       @dictionary = Hash.new
       @dictionary = {
         "second" => 1,
+        "s" => 1,
         "minute" => 60,
+        "min" => 60,
         "hour" => 60*60,
+        "h" => 60*60,
         "day" => 60*60*24,
         "week" => 60*60*24*7,
         "year" => 60*60*24*365,
