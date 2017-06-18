@@ -47,13 +47,42 @@ RSpec.describe InoxConverter do
       @inox_converter = InoxConverter.convertArea(0.001, 'square kilometre', 'square metre')
       expect(1000)
     end
-    
+
     it "should run convertArea with rational numbers" do
       @inox_converter = InoxConverter.convertArea(1000.50, 'square metre', 'square kilometre')
       expect(0.001)
       @inox_converter = InoxConverter.convertArea(0.001, 'square kilometre', 'square metre')
       expect(1000)
     end
+
+    it "should run convertMass with int numbers" do
+      @inox_converter = InoxConverter.convertMass(1000, 'gram', 'kilogram')
+      expect(1)
+      @inox_converter = InoxConverter.convertMass(1, 'kilogram', 'gram')
+      expect(1000)
+    end
+
+    it "should run convertMass with rational numbers" do
+      @inox_converter = InoxConverter.convertMass(1000.50, 'gram', 'kilogram')
+      expect(0.001)
+      @inox_converter = InoxConverter.convertMass(0.001, 'kilogram', 'gram')
+      expect(1000)
+    end
+
+    it "should run convertTime with int numbers" do
+      @inox_converter = InoxConverter.convertTime(60, 'second', 'minute')
+      expect(1)
+      @inox_converter = InoxConverter.convertTime(1, 'minute', 'second')
+      expect(60)
+    end
+
+    it "should run convertTime with rational numbers" do
+      @inox_converter = InoxConverter.convertTime(60.5, 'second', 'minute')
+      expect(1.01)
+      @inox_converter = InoxConverter.convertTime(1.01, 'minute', 'second')
+      expect(60.5)
+    end
+
 
 
   end

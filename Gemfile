@@ -5,6 +5,7 @@ group :development, :test do
   gem 'rubocop', '~> 0.49.1'
   gem 'rubycritic', '~> 3.2', '>= 3.2.3'
   gem 'rspec', '~> 3.6'
+  gem 'simplecov', :require => false
 
 
 end
