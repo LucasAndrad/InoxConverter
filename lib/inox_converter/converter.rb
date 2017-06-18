@@ -9,7 +9,13 @@ module InoxConverter
 		end
 
 		def convert(valueToConvert, firstUnit, secondUnit)
-			finalValue = (valueToConvert.round(10) * (getInDictionary(firstUnit).round(10)) / getInDictionary(secondUnit).round(10))
+			#First Step
+			finalValue = valueToConvert.round(10)
+			#Second Step
+			finalValue *= getInDictionary(firstUnit).round(10)
+			#Third step
+			finalValue /= getInDictionary(secondUnit).round(10)
+			#Fourth step
 			return finalValue.round(10)
 		end
 
@@ -27,7 +33,7 @@ module InoxConverter
 		end
 
 		# newUnit: name of the new unit to be added
-		# newRate: reason between new unit and base unit 
+		# newRate: reason between new unit and base unit
 		# (example: kilometer it's 1000x greater than meter, so the newRate should be 1000)
 		# returns bool - true if succeed, false if fails
 		def addUnit(newUnit, newRate)
