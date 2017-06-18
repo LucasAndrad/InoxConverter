@@ -13,12 +13,48 @@ RSpec.describe InoxConverter do
       expect('Currency')
     end
 
+    it "should run convertLenght with int numbers" do
+      @inox_converter = InoxConverter.convertLenght(1000, 'metre', 'kilometre')
+      expect(1)
+      @inox_converter = InoxConverter.convertLenght(1, 'kilometre', 'metre')
+      expect(1000)
+    end
+
     it "should run convertLenght with rational numbers" do
       @inox_converter = InoxConverter.convertLenght(1000.50, 'metre', 'kilometre')
       expect(1.0005)
       @inox_converter = InoxConverter.convertLenght(1.0005, 'kilometre', 'metre')
       expect(1000.50)
     end
+
+    it "should run convertVolume with int numbers" do
+      @inox_converter = InoxConverter.convertVolume(1000, 'mililitre', 'litre')
+      expect(1)
+      @inox_converter = InoxConverter.convertVolume(1, 'litre', 'mililitre')
+      expect(1000)
+    end
+
+    it "should run convertVolume with rational numbers" do
+      @inox_converter = InoxConverter.convertVolume(1000.50, 'mililitre', 'litre')
+      expect(1.0005)
+      @inox_converter = InoxConverter.convertVolume(1.0005, 'litre', 'mililitre')
+      expect(1000.50)
+    end
+
+    it "should run convertArea with int numbers" do
+      @inox_converter = InoxConverter.convertArea(1000, 'square metre', 'square kilometre')
+      expect(0.001)
+      @inox_converter = InoxConverter.convertArea(0.001, 'square kilometre', 'square metre')
+      expect(1000)
+    end
+    
+    it "should run convertArea with rational numbers" do
+      @inox_converter = InoxConverter.convertArea(1000.50, 'square metre', 'square kilometre')
+      expect(0.001)
+      @inox_converter = InoxConverter.convertArea(0.001, 'square kilometre', 'square metre')
+      expect(1000)
+    end
+
 
   end
 end
