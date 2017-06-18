@@ -92,4 +92,40 @@ RSpec.describe InoxConverter do
     end
   end
 
+  describe "addLenghtUnit" do
+    it "should add a lenght unit" do
+      @inox_converter = InoxConverter.addLenghtUnit('my unit', 10)
+      expect('key my unit added')
+    end
+  end
+
+  describe "addVolumeUnit" do
+    it "should add a volume unit" do
+      @inox_converter = InoxConverter.addVolumeUnit('my unit', 10)
+      expect('key my unit added')
+    end
+  end
+
+  describe "addAreaUnit" do
+    it "should add a area unit" do
+      @inox_converter = InoxConverter.addAreaUnit('my unit', 10)
+      expect('key my unit added')
+    end
+  end
+
+  describe "addMassUnit" do
+    it "should add a mass unit" do
+      @inox_converter = InoxConverter.addMassUnit('my unit', 10)
+      expect('key my unit added')
+    end
+  end
+
+  describe "addTimeUnit" do
+    it "should add a time unit" do
+      @inox_converter = InoxConverter.addTimeUnit('my unit', 10)
+      expect('key my unit added')
+    end
+  end
+
+
 end
