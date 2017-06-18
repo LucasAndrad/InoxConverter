@@ -18,7 +18,9 @@ module Api
 			@hash = Hash.new
 			@hash_inter = @hash_local['list']['resources']['resource']
 			@hash_inter.each do |cout|
-			 	@hash[cout['field'][0].to_s] = cout['field'][1].to_f
+				simbol_string = cout['field'][0].to_s
+				simbol = simbol_string.split("/")
+			 	@hash[simbol[1]] = cout['field'][1].to_f
 	 		end	
 		end
 
