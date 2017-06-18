@@ -96,6 +96,8 @@ RSpec.describe InoxConverter do
     it "should add a lenght unit" do
       @inox_converter = InoxConverter.addLenghtUnit('my unit', 10)
       expect('key my unit added')
+      @inox_converter = InoxConverter.addLenghtUnit('my unit', 10)
+      expect('key my unit already exists')
     end
   end
 
@@ -103,6 +105,8 @@ RSpec.describe InoxConverter do
     it "should add a volume unit" do
       @inox_converter = InoxConverter.addVolumeUnit('my unit', 10)
       expect('key my unit added')
+      @inox_converter = InoxConverter.addVolumeUnit('my unit', 10)
+      expect('key my unit already exists')
     end
   end
 
@@ -110,6 +114,8 @@ RSpec.describe InoxConverter do
     it "should add a area unit" do
       @inox_converter = InoxConverter.addAreaUnit('my unit', 10)
       expect('key my unit added')
+      @inox_converter = InoxConverter.addAreaUnit('my unit', 10)
+      expect('key my unit already exists')
     end
   end
 
@@ -117,6 +123,8 @@ RSpec.describe InoxConverter do
     it "should add a mass unit" do
       @inox_converter = InoxConverter.addMassUnit('my unit', 10)
       expect('key my unit added')
+      @inox_converter = InoxConverter.addMassUnit('my unit', 10)
+      expect('key my unit already exists')
     end
   end
 
@@ -124,8 +132,9 @@ RSpec.describe InoxConverter do
     it "should add a time unit" do
       @inox_converter = InoxConverter.addTimeUnit('my unit', 10)
       expect('key my unit added')
+      @inox_converter = InoxConverter.addTimeUnit('my unit', 10)
+      expect('key my unit already exists')
     end
   end
-
 
 end
