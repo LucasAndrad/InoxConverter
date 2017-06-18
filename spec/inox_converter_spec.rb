@@ -12,5 +12,13 @@ RSpec.describe InoxConverter do
       @inox_converter = InoxConverter.convertCurrency(10,'firstUnit', 'secondUnit')
       expect('Currency')
     end
+
+    it "should run convertLenght with rational numbers" do
+      @inox_converter = InoxConverter.convertLenght(1000.50, 'metre', 'kilometre')
+      expect(1.0005)
+      @inox_converter = InoxConverter.convertLenght(1.0005, 'kilometre', 'metre')
+      expect(1000.50)
+    end
+
   end
 end
