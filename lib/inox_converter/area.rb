@@ -24,7 +24,7 @@ module InoxConverter
         "in2" => 0.00064516,
         "hectare" => 10000,
         "ha" => 10000,
-        "acre" => 4046.86
+        "acre" => 4046.86,
         "ac" => 4046.86
       }
     end

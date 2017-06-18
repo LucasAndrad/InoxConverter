@@ -23,11 +23,13 @@ module InoxConverter
 
 	def self.convertVolume(valueToConvert, firstUnit, secondUnit)
 		puts "Volume convertion"
+		self.newVolumeInstance
 		@volumeConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
 	def self.convertArea(valueToConvert, firstUnit, secondUnit)
 		puts "Area convertion"
+		self.newAreaInstance
 		@areaConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
@@ -108,5 +110,5 @@ module InoxConverter
 			# do nothing
 		end
 	end
-  
+
 end

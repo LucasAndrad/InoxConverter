@@ -24,10 +24,10 @@ module InoxConverter
         "glass" => 0.240,
         "teaspoon" => 0.00492892,
         "tablespoon" => 0.0147868,
-        "cubicfoot" => 28.3168
+        "cubicfoot" => 28.3168,
         "ft3" => 28.3168
       }
     end
-    
+
   end
 end
