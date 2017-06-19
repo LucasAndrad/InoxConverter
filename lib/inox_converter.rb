@@ -6,14 +6,21 @@ require "inox_converter/mass"
 require "inox_converter/volume"
 require "inox_converter/time"
 require "inox_converter/currency"
+require "inox_converter/date_format"
 require "inox_converter/currency_adapter"
 
 module InoxConverter
 
 	def self.convertCurrency(valueToConvert, firstUnit, secondUnit)
-		puts "Currency Conversion convertion"
+		puts "Currency conversion"
 		currencyConverter = InoxConverter::CurrencyAdapter.new()
 		currencyConverter.convert(valueToConvert, firstUnit, secondUnit)
+	end
+
+	def self.convertDate(dateToConvert, desiredFormat)
+		 puts "Date Formater"
+		 self.newDateFormatInstance
+		 @dateFormater.formatDate(dateToConvert, desiredFormat)
 	end
 
 	# firstUnit = actual unit
@@ -81,6 +88,14 @@ module InoxConverter
 		else
 			# do nothing
 		end
+	end
+
+	def self.newDateFormatInstance()
+		if @dateFormater.nil?
+			@dateFormater = DateFormat.new()
+		else
+			# do nothing
+		end		
 	end
 
 	def self.newVolumeInstance()
