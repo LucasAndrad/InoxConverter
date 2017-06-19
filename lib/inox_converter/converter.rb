@@ -8,6 +8,8 @@ module InoxConverter
 			self.initDictionary
 		end
 
+
+		# Template to convert
 		def convert(valueToConvert, firstUnit, secondUnit)
 			#First Step
 			finalValue = valueToConvert.round(10)

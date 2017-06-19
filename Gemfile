@@ -12,3 +12,4 @@ end
 
 
 gemspec
+gem 'rest-client'
