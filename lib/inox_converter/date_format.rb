@@ -2,6 +2,8 @@ require 'date'
 module InoxConverter
   class DateFormat < Converter
 
+
+    # use values from https://en.wikipedia.org/wiki/Date_format_by_country
     def initDictionary
       @dictionary = Hash.new
       @dictionary = {

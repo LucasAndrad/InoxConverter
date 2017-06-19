@@ -7,25 +7,35 @@ require "inox_converter/volume"
 require "inox_converter/time"
 require "inox_converter/currency"
 require "inox_converter/date_format"
+require "inox_converter/time_format"
 require "inox_converter/currency_adapter"
 
 module InoxConverter
 
+	# Facade
+	# Conversion methods
+
+	def self.convertDateFormat(dateToConvert, desiredFormat)
+		 puts "Date Formater"
+		 self.newDateFormatInstance
+		 @dateFormater.formatDate(dateToConvert, desiredFormat)
+	end
+
+	def self.convertTimeFormat(timeToConvert, desiredFormat)
+		 puts "Time Formater"
+		 self.newTimeFormatInstance
+		 @timeFormater.formatTime(timeToConvert, desiredFormat)
+	end
+
+	# firstUnit = actual unit
+	# secondUnit = final unit
+	# returns the value converted
 	def self.convertCurrency(valueToConvert, firstUnit, secondUnit)
 		puts "Currency conversion"
 		currencyConverter = InoxConverter::CurrencyAdapter.new()
 		currencyConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
-	def self.convertDate(dateToConvert, desiredFormat)
-		 puts "Date Formater"
-		 self.newDateFormatInstance
-		 @dateFormater.formatDate(dateToConvert, desiredFormat)
-	end
-
-	# firstUnit = actual unit
-	# secondUnit = final unit
-	# returns the value converted
 	def self.convertLenght(valueToConvert, firstUnit, secondUnit)
 		puts "Lenght convertion"
 		self.newLenghtInstance
@@ -56,6 +66,9 @@ module InoxConverter
 		@timeConverter.convert(valueToConvert, firstUnit, secondUnit)
 	end
 
+
+	# Add unit methods
+
 	def self.addLenghtUnit(newUnit, newRate)
 		self.newLenghtInstance
 		@lengthConverter.addUnit(newUnit, newRate)
@@ -82,6 +95,8 @@ module InoxConverter
 	end
 
 
+	# Instantiation methods
+
 	def self.newLenghtInstance()
 		if @lengthConverter.nil?
 			@lengthConverter = Length.new()
@@ -93,6 +108,14 @@ module InoxConverter
 	def self.newDateFormatInstance()
 		if @dateFormater.nil?
 			@dateFormater = DateFormat.new()
+		else
+			# do nothing
+		end		
+	end
+
+	def self.newTimeFormatInstance()
+		if @timeFormater.nil?
+			@timeFormater = TimeFormat.new()
 		else
 			# do nothing
 		end		
