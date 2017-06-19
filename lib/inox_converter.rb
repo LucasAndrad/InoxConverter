@@ -94,6 +94,15 @@ module InoxConverter
 		@timeConverter.addUnit(newUnit, newRate)
 	end
 
+	def self.addDateFormat(newFormat, newRate)
+		self.newDateFormatInstance
+		@dateFormater.addUnit(newFormat, newRate)
+	end
+
+	def self.addTimeFormat(newFormat, newRate)
+		self.newTimeFormatInstance
+		@timeFormater.addUnit(newFormat, newRate)
+	end
 
 	# Instantiation methods
 
