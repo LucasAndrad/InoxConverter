@@ -92,6 +92,20 @@ RSpec.describe InoxConverter do
     end
   end
 
+  describe "Date and Time formats" do
+    it "should format date to DMY" do
+      date = Date.today
+      @inox_converter = InoxConverter.convertDateFormat(date, "DMY")
+      expect(@inox_converter).to eq(Date.today.strftime("%d/%m/%Y"))
+    end
+
+    it "should format time to hour mimnute seconde 24h" do
+      time = Time.now
+      @inox_converter = InoxConverter.convertTimeFormat(time, "24hms")
+      expect(@inox_converter).to eq(Time.now.strftime("%X"))
+    end
+  end
+
   describe "addLenghtUnit" do
     it "should add a lenght unit" do
       @inox_converter = InoxConverter.addLenghtUnit('my unit', 10)
