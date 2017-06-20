@@ -56,6 +56,21 @@ RSpec.describe Api::Api, type: :class do
 			expect(false)   
 		end
 
+		it "should run validate in data_validate_api for true" do
+			api = Api::Api.new
+			@hash_local = api.consume_api
+			@hash = api.treat_data
+			validate = api.data_validate_api("BRL", "EUR")
+			expect(true)
+		end
+
+		it "should run validate in data_validate_api for false" do
+			api = Api::Api.new
+			@hash_local = api.consume_api
+			@hash = api.treat_data
+			validate = api.data_validate_api("BRL", "GDSF")
+			expect(false)
+		end
 		
 	end
 end
