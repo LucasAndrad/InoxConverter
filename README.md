@@ -26,16 +26,18 @@ Or install it yourself as:
 
 To make a conversion:
 
-<i>valueToConvert: the value you want to convert
-firstUnit: actual unit -> string
-secondUnit: the unit you want to convert to -> string </i>
+<i>
+- valueToConvert: the value you want to convert
+- firstUnit: actual unit -> string
+- secondUnit: the unit you want to convert to -> string 
+</i>
 
-InoxConverter.convertCurrency(valueToConvert, firstUnit, secondUnit)
-InoxConverter.convertLenght(valueToConvert, firstUnit, secondUnit)
-InoxConverter.convertVolume(valueToConvert, firstUnit, secondUnit)
-InoxConverter.convertArea(valueToConvert, firstUnit, secondUnit)
-InoxConverter.convertMass(valueToConvert, firstUnit, secondUnit)
-InoxConverter.convertTime(valueToConvert, firstUnit, secondUnit)
+- InoxConverter.convertCurrency(valueToConvert, firstUnit, secondUnit)
+- InoxConverter.convertLenght(valueToConvert, firstUnit, secondUnit)
+- InoxConverter.convertVolume(valueToConvert, firstUnit, secondUnit)
+- InoxConverter.convertArea(valueToConvert, firstUnit, secondUnit)
+- InoxConverter.convertMass(valueToConvert, firstUnit, secondUnit)
+- InoxConverter.convertTime(valueToConvert, firstUnit, secondUnit)
 
 Example:
 ```ruby
@@ -44,16 +46,18 @@ InoxConverter.convertLenght(10, 'meter', 'kilometer')
 
 To add a unit:
 
-<i>newUnit: name of the new unit to be added -> string
-newRate: reason between new unit and base unit</i>
+<i>
+- newUnit: name of the new unit to be added -> string
+- newRate: reason between new unit and base unit
+</i>
 
-InoxConverter.addLenghtUnit(newUnit, newRate)
-InoxConverter.addVolumeUnit(newUnit, newRate)
-InoxConverter.addAreaUnit(newUnit, newRate)
-InoxConverter.addMassUnit(newUnit, newRate)
-InoxConverter.addTimeUnit(newUnit, newRate)
-InoxConverter.addDateFormat(newFormat, newRate)
-InoxConverter.addTimeFormat(newFormat, newRate)
+- InoxConverter.addLenghtUnit(newUnit, newRate)
+- InoxConverter.addVolumeUnit(newUnit, newRate)
+- InoxConverter.addAreaUnit(newUnit, newRate)
+- InoxConverter.addMassUnit(newUnit, newRate)
+- InoxConverter.addTimeUnit(newUnit, newRate)
+- InoxConverter.addDateFormat(newFormat, newRate)
+- InoxConverter.addTimeFormat(newFormat, newRate)
 
 If you want to add a lenght unit called MyUnit that is ten times greater than the base unit of lenght (meter), you should to this:
 ```ruby
@@ -63,12 +67,12 @@ InoxConverter.addLenghtUnit('MyUnit', 10)
 
 ### Base units:
 
-Area: squared meter
-Currency: dollar
-Length: meter
-Mass: gram
-Time: second
-Volume: liter
+- Area: squared meter
+- Currency: dollar
+- Length: meter
+- Mass: gram
+- Time: second
+- Volume: liter
 
 ## Development
 
