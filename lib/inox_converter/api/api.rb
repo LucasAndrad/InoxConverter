@@ -55,6 +55,22 @@ module Api
 			end 
 		end
 
+		def validate_first_unit(firstUnit)
+			if @data == false || return_hash_currency(firstUnit) == false
+				return false
+			else
+				return true
+			end
+		end
+
+		def validate_second_unit(secondUnit) 
+			if secondUnit == "USD"
+		 		return true;
+		 	else
+		 		return false
+		 	end
+		end
+
 		#Template of execution sequence of the methods and return @hash
 		def dictionary_api(firstUnit, secondUnit)
 			consume_api
@@ -63,14 +79,23 @@ module Api
 			
 		end
 
+		
 		#new metodo for convert currency
 		def convert_currency(valueToConvert, firstUnit, secondUnit)
-			
-			if dictionary_api(firstUnit, secondUnit) == false
-				return 0
-			else	 
-				finalValue = (valueToConvert / @hash[firstUnit]) * @hash[secondUnit]
-				return finalValue
+			dictionary_api
+			if validate_second_unit(secondUnit) == true
+				if validate_first_unit(firstUnit) == true
+					finalValue = valueToConvert / @hash[firstUnit]
+				else
+					return 0
+				end
+			else
+				if data_validate_api(firstUnit, secondUnit)
+					finalValue = (valueToConvert / @hash[firstUnit]) * @hash[secondUnit]
+					return finalValue
+				else	 
+					return 0
+				end
 			end
 		end 
 	end
