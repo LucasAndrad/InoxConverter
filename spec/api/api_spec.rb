@@ -71,6 +71,22 @@ RSpec.describe Api::Api, type: :class do
 			validate = api.data_validate_api("BRL", "GDSF")
 			expect(false)
 		end
+
+		it "should run validate in validate_first_unit for true" do
+			api = Api::Api.new
+			@hash_local = api.consume_api
+			@hash = api.treat_data
+			validate = api.validate_first_unit("BRL")
+			expect(false)
+		end
+
+		it "should run validate in validate_first_unit for false" do
+			api = Api::Api.new
+			@hash_local = api.consume_api
+			@hash = api.treat_data
+			validate = api.validate_first_unit("GDSF")
+			expect(false)
+		end
 		
 	end
 end
