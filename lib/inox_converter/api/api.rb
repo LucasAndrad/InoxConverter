@@ -72,10 +72,10 @@ module Api
 		end
 
 		#Template of execution sequence of the methods and return @hash
-		def dictionary_api(firstUnit, secondUnit)
+		def dictionary_api
 			consume_api
 			treat_data
-			data_validate_api(firstUnit, secondUnit)
+			
 			
 		end
 
