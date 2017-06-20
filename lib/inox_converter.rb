@@ -68,6 +68,8 @@ module InoxConverter
 
 
 	# Add unit methods
+	# newUnit: name of the new unit to be added
+	# newRate: reason between new unit and base unit
 
 	def self.addLenghtUnit(newUnit, newRate)
 		self.newLenghtInstance

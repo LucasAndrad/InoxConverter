@@ -5,7 +5,8 @@ module InoxConverter
     def initDictionary
       @dictionary = Hash.new
       @dictionary = {
-        "cubicmetre" => 1000,
+        "cubic_metre" => 1000,
+        "cubic_meter" => 1000,
         "m3" => 1000,
         "decaliter" => 10,
         "dal" => 10,
