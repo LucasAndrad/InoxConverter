@@ -1,0 +1,23 @@
+language: ruby
+
+rvm:
+  - "2.3.1"
+
+before_script:
+  - gem install bundler
+  - bundle install
+  - rspec
+
+
+script:
+  - ./build.sh
+
+notifications:
+  email:
+    recipients:
+      - nicacionetobsb@gmail.com
+      - lucasandradeunb@gmail.com
+      - vinisilvacar@gmail.com
+      - julioxavierr@gmail.com
+      - jhon_fla@hotmail.com
+      - gesiel.was.f@gmail.com
