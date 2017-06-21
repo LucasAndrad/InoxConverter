@@ -1,5 +1,7 @@
 # InoxConverter
 
+[![Build Status](https://travis-ci.org/vinisilvacar/InoxConverter.svg?branch=master)](https://travis-ci.org/vinisilvacar/InoxConverter)
+
 Hi! Welcome to Inox Converter official page!
 Our gem is created to work like a 'swiss army knife' for Ruby developers, bringing a easy and reliable way to convert some formats and units that commonly appear during the developing process.
 You can: convert area, currency, length, mass, volume and format time and date.
