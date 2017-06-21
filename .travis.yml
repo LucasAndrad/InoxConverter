@@ -1,17 +1,23 @@
 language: ruby
+cache:
+  bundler: true
+  directories:
+    - tmp/cache/assets/test/sprockets
 
 rvm:
   - "2.3.1"
 
 before_script:
   - gem install bundler
+  - gem install rubocop rubycritic rspec simplecov
   - bundle install
-  - rspec
+
 
 
 script:
   - ./build.sh
-
+  - exit
+  - rspec
 notifications:
   email:
     recipients:
