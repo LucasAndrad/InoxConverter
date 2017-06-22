@@ -20,6 +20,11 @@ RSpec.describe InoxConverter do
       expect(1000)
     end
 
+    it "should run convertLenght but not converter, show some error" do
+      expect { InoxConverter.convertLenght(1, 'kilometre', 'gesiel') }.to raise_error("gesiel isn't recognized by InoxConverter")
+      expect { InoxConverter.convertLenght(1, 'gesiel', 'km') }.to raise_error("gesiel isn't recognized by InoxConverter")
+    end
+
     it "should run convertLenght with rational numbers" do
       @inox_converter = InoxConverter.convertLenght(1000.50, 'metre', 'kilometre')
       expect(1.0005)
