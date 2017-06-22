@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "inox_converter"
   spec.version       = InoxConverter::VERSION
   spec.authors       = ["Lucas Andrade", "Júlio Xavier", "Gesiel Freitas", "Jhonatan Alves", "Nicácio Neto", "Vinícius Carvalho"]
-  spec.email         = ["lucasandradeunb@gmail.com", "julioxavierr@gmail.com"]
+  spec.email         = ["lucasandradeunb@gmail.com", "julioxavierr@gmail.com", "gesiel.was.f@gmail.com"]
 
   spec.summary       = "The ultimate converter gem"
   spec.description   = "Convert currency, temperature, lenght..."
