@@ -11,13 +11,24 @@ module InoxConverter
 
 		# Template to convert
 		def convert(valueToConvert, firstUnit, secondUnit)
-			#First Step
+			# First Step
 			finalValue = valueToConvert.round(10)
-			#Second Step
-			finalValue *= getInDictionary(firstUnit).round(10)
-			#Third step
-			finalValue /= getInDictionary(secondUnit).round(10)
-			#Fourth step
+
+			# Second Step
+			firstUnitResultant = getInDictionary(firstUnit)
+			if firstUnitResultant.nil? 
+				raise NotImplementedError.new("#{firstUnit} isn't recognized by InoxConverter") 
+			end
+			finalValue *= firstUnitResultant.round(10)
+
+			# Third step
+			secondUnitResultant = getInDictionary(secondUnit)
+			if secondUnitResultant.nil? 
+				raise NotImplementedError.new("#{secondUnit} isn't recognized by InoxConverter") 
+			end
+			finalValue /= secondUnitResultant.round(10)
+
+			# Fourth step
 			return finalValue.round(10)
 		end
 
