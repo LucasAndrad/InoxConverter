@@ -25,11 +25,6 @@ module InoxConverter
 			return @dictionary[unit]
 		end
 
-		def addUnitInDictionary(newUnit, newRate)
-			# Non-optional implementation
-			raise NotImplementedError.new("Convert method not implemented")
-		end
-
 		def initDictionary
 			raise NotImplementedError.new("Dictionary not initialize")
 		end

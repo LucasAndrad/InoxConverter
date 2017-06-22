@@ -15,6 +15,10 @@ module InoxConverter
 	# Facade
 	# Conversion methods
 
+	def self.hi
+		puts "Hi, you are using InoxConverter!"
+	end
+
 	def self.convertDateFormat(dateToConvert, desiredFormat)
 		 puts "Date Formater"
 		 self.newDateFormatInstance

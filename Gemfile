@@ -10,6 +10,5 @@ group :development, :test do
 
 end
 
-
 gemspec
 gem 'rest-client'
