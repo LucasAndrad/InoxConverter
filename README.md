@@ -99,6 +99,29 @@ We also have a full user manual in portuguese:  [Manual de Usuário](https://git
 Manual in Englise: coming soon.
 
 ## Contributing
+First you must choose an issue or request for us to create a new one
+
+Then clone or fork our Repository
+
+Time to Code!
+
+Run
+
+```script
+bundle install
+bash build.sh
+```
+
+That's it inox_converter is install in your machine and ready use.
+
+Do your contribution.
+<p style="color: red;">Don't forget to make your test's! </P> 
+<p> We use Rspec </P>
+Run your tests with:
+
+```script
+rspec
+```
 
 ## License
 
