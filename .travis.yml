@@ -1,0 +1,29 @@
+sudo: true
+language: ruby
+cache:
+  bundler: true
+  directories:
+    - tmp/cache/assets/test/sprockets
+
+rvm:
+  - "2.3.1"
+
+before_script:
+  - gem install bundler
+  - gem install rubocop rubycritic rspec simplecov
+  - bundle install
+
+
+
+script:
+  - ./build_travis.sh
+  - rspec
+notifications:
+  email:
+    recipients:
+      - nicacionetobsb@gmail.com
+      - lucasandradeunb@gmail.com
+      - vinisilvacar@gmail.com
+      - julioxavierr@gmail.com
+      - jhon_fla@hotmail.com
+      - gesiel.was.f@gmail.com

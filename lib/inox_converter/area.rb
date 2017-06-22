@@ -11,7 +11,7 @@ module InoxConverter
         "square metre" => 1,
         "square meter" => 1,
         "m2" => 1,
-				"square centimeter"=> 10**-4,
+		"square centimeter"=> 10**-4,
         "square centimetre"=> 10**-4,
         "cm2"=> 10**-4,
         "square mile" => 2.59**6,

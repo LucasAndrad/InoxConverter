@@ -1,8 +1,14 @@
 # InoxConverter
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/inox_converter`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Build Status](https://travis-ci.org/vinisilvacar/InoxConverter.svg?branch=master)](https://travis-ci.org/vinisilvacar/InoxConverter)
 
-TODO: Delete this and the text above, and describe your gem
+[![Gem Version](https://badge.fury.io/rb/inox_converter.svg)](https://badge.fury.io/rb/inox_converter)
+
+Hi! Welcome to Inox Converter official page!
+Our gem is created to work like a 'swiss army knife' for Ruby developers, bringing a easy and reliable way to convert some formats and units that commonly appear during the developing process.
+You can: convert area, currency, length, mass, volume and format time and date.
+You want to use one unit that doesn't exist in our gem? You can add that unit too!
+And more... As a framework you can extend our gem and create your own convertions type.
 
 ## Installation
 
@@ -22,7 +28,55 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To make a conversion:
+
+<i>
+- valueToConvert: the value you want to convert
+- firstUnit: actual unit -> string
+- secondUnit: the unit you want to convert to -> string 
+</i>
+
+- InoxConverter.convertCurrency(valueToConvert, firstUnit, secondUnit)
+- InoxConverter.convertLenght(valueToConvert, firstUnit, secondUnit)
+- InoxConverter.convertVolume(valueToConvert, firstUnit, secondUnit)
+- InoxConverter.convertArea(valueToConvert, firstUnit, secondUnit)
+- InoxConverter.convertMass(valueToConvert, firstUnit, secondUnit)
+- InoxConverter.convertTime(valueToConvert, firstUnit, secondUnit)
+
+Example:
+```ruby
+InoxConverter.convertLenght(10, 'meter', 'kilometer')
+```
+
+To add a unit:
+
+<i>
+- newUnit: name of the new unit to be added -> string
+- newRate: reason between new unit and base unit
+</i>
+
+- InoxConverter.addLenghtUnit(newUnit, newRate)
+- InoxConverter.addVolumeUnit(newUnit, newRate)
+- InoxConverter.addAreaUnit(newUnit, newRate)
+- InoxConverter.addMassUnit(newUnit, newRate)
+- InoxConverter.addTimeUnit(newUnit, newRate)
+- InoxConverter.addDateFormat(newFormat, newRate)
+- InoxConverter.addTimeFormat(newFormat, newRate)
+
+If you want to add a lenght unit called MyUnit that is ten times greater than the base unit of lenght (meter), you should to this:
+```ruby
+InoxConverter.addLenghtUnit('MyUnit', 10)
+```
+
+
+### Base units:
+
+- Area: squared meter
+- Currency: dollar
+- Length: meter
+- Mass: gram
+- Time: second
+- Volume: liter
 
 ## Development
 
