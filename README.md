@@ -1,12 +1,12 @@
 # InoxConverter
 
-[![Build Status](https://travis-ci.org/vinisilvacar/InoxConverter.svg?branch=master)](https://travis-ci.org/vinisilvacar/InoxConverter)
+![Coverage](https://img.shields.io/badge/coverage-97.67%25-brightgreen.svg)
 
-[![Gem Version](https://badge.fury.io/rb/inox_converter.svg)](https://badge.fury.io/rb/inox_converter)
+![Gem Version](https://img.shields.io/badge/gem%20version-1.0.0-brightgreen.svg)
 
 Hi! Welcome to Inox Converter official page!
 Our gem is created to work like a 'swiss army knife' for Ruby developers, bringing a easy and reliable way to convert some formats and units that commonly appear during the developing process.
-You can: convert area, currency, length, mass, volume and format time and date.
+You can: convert area, currency(real time), length, mass, volume and format time and date.
 You want to use one unit that doesn't exist in our gem? You can add that unit too!
 And more... As a framework you can extend our gem and create your own convertions type.
 
@@ -15,38 +15,48 @@ And more... As a framework you can extend our gem and create your own convertion
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'inox_converter'
+  gem 'inox_converter'
 ```
 
 And then execute:
 
-    $ bundle
+```script
+  bundle install
+```
 
 Or install it yourself as:
 
-    $ gem install inox_converter
+```script
+  gem install inox_converter
+```
 
 ## Usage
 
 To make a conversion:
 
-<i>
 - valueToConvert: the value you want to convert
 - firstUnit: actual unit -> string
 - secondUnit: the unit you want to convert to -> string 
-</i>
 
-- InoxConverter.convertCurrency(valueToConvert, firstUnit, secondUnit)
-- InoxConverter.convertLenght(valueToConvert, firstUnit, secondUnit)
-- InoxConverter.convertVolume(valueToConvert, firstUnit, secondUnit)
-- InoxConverter.convertArea(valueToConvert, firstUnit, secondUnit)
-- InoxConverter.convertMass(valueToConvert, firstUnit, secondUnit)
-- InoxConverter.convertTime(valueToConvert, firstUnit, secondUnit)
+#### Exemplos
 
-Example:
 ```ruby
-InoxConverter.convertLenght(10, 'meter', 'kilometer')
+InoxConverter.convertCurrency(valueToConvert, firstUnit, secondUnit)
+InoxConverter.convertLenght(valueToConvert, firstUnit, secondUnit)
+InoxConverter.convertVolume(valueToConvert, firstUnit, secondUnit)
+InoxConverter.convertArea(valueToConvert, firstUnit, secondUnit)
+InoxConverter.convertMass(valueToConvert, firstUnit, secondUnit)
+InoxConverter.convertTime(valueToConvert, firstUnit, secondUnit)
+InoxConverter.convertTimeFormat(timeToFormat, desiredFormat)
+InoxConverter.convertDateFormat(dateToFormat, desiredFormat)
 ```
+
+```ruby
+InoxConverter.convertCurrency(10, "USD", "BRL")
+InoxConverter.convertLenght(10, 'meter', 'kilometer')
+InoxConverter.convertDateFormat(Date.today, "DMY")
+```
+
 
 To add a unit:
 
@@ -55,19 +65,21 @@ To add a unit:
 - newRate: reason between new unit and base unit
 </i>
 
-- InoxConverter.addLenghtUnit(newUnit, newRate)
-- InoxConverter.addVolumeUnit(newUnit, newRate)
-- InoxConverter.addAreaUnit(newUnit, newRate)
-- InoxConverter.addMassUnit(newUnit, newRate)
-- InoxConverter.addTimeUnit(newUnit, newRate)
-- InoxConverter.addDateFormat(newFormat, newRate)
-- InoxConverter.addTimeFormat(newFormat, newRate)
+```ruby
+InoxConverter.addLenghtUnit(newUnit, newRate)
+InoxConverter.addVolumeUnit(newUnit, newRate)
+InoxConverter.addAreaUnit(newUnit, newRate)
+InoxConverter.addMassUnit(newUnit, newRate)
+InoxConverter.addTimeUnit(newUnit, newRate)
+InoxConverter.addDateFormat(newFormat, newRate)
+InoxConverter.addTimeFormat(newFormat, newRate)
+```
 
 If you want to add a lenght unit called MyUnit that is ten times greater than the base unit of lenght (meter), you should to this:
+
 ```ruby
 InoxConverter.addLenghtUnit('MyUnit', 10)
 ```
-
 
 ### Base units:
 
@@ -78,16 +90,15 @@ InoxConverter.addLenghtUnit('MyUnit', 10)
 - Time: second
 - Volume: liter
 
-## Development
+## Usage
+You can see all types and units to convert in this link:
+[List of Units](https://github.com/vinisilvacar/InoxConverter/wiki/Tipos-de-Convers%C3%A3o)
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+We also have a full user manual in portuguese:  [Manual de Usuário](https://github.com/vinisilvacar/InoxConverter/wiki/Manual-de-Usu%C3%A1rio)
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Manual in Englise: coming soon.
 
 ## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/inox_converter.
-
 
 ## License
 

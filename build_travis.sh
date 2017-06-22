@@ -4,4 +4,4 @@
 # Version 0.1.0
 
 gem build inox_converter.gemspec
-gem install ./inox_converter-0.1.0.gem
+gem install ./inox_converter-1.0.0.gem
