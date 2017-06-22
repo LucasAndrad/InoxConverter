@@ -6,12 +6,12 @@ require 'inox_converter/version'
 Gem::Specification.new do |spec|
   spec.name          = "inox_converter"
   spec.version       = InoxConverter::VERSION
-  spec.authors       = ["Lucas Andrade"]
-  spec.email         = ["lucasandradeunb@gmail.com"]
+  spec.authors       = ["Lucas Andrade", "Júlio Xavier", "Gesiel Freitas", "Jhonatan Alves", "Nicácio Neto", "Vinícius Carvalho"]
+  spec.email         = ["lucasandradeunb@gmail.com", "julioxavierr@gmail.com"]
 
   spec.summary       = "The ultimate converter gem"
   spec.description   = "Convert currency, temperature, lenght..."
-  spec.homepage      = ""
+  spec.homepage      = "https://rubygems.org/gems/inox_converter"
   spec.license       = "MIT"
   spec.files         = Dir["lib/**/*", "README.md"]
 
