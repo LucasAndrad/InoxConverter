@@ -59,23 +59,23 @@ RSpec.describe Api::Api, type: :class do
 			expect(false)
 		end
 
-		 it "should run validate in validate_first_unit for true" do
-			validate = @api.validate_first_unit("BRL")
-			expect(false)
+		 it "should run validate in validate_currency_unit for true" do
+			validate = @api.validate_currency_unit("BRL")
+			expect(true)
 		end
 
 		it "should run validate in validate_first_unit for false" do
-			validate = @api.validate_first_unit("GDSF")
+			validate = @api.validate_currency_unit("USD")
 			expect(false)
 		end
 
 		it "should run validate in validate_second_unit for USD true" do
-			validate = @api.validate_second_unit("USD")
-			expect(false)
+			validate = @api.validate_usd_unit("USD")
+			expect(true)
 		end
 
 		it "should run validate in validate_second_unit for USD false" do
-			validate = @api.validate_second_unit("BRL")
+			validate = @api.validate_usd_unit("BRL")
 			expect(false)
 		end
 		
@@ -101,9 +101,18 @@ RSpec.describe Api::Api, type: :class do
 			expect(valor).to be_instance_of(Float)
 			expect(valor).to be >  20
 		end
-		# it "should run validate in validate_second_unit for USD false" do
-		# end
-		# it "should run validate in validate_second_unit for USD false" do
-		# end
+		 it "should run convert currency for USD first unit" do
+		 	valor = @api.convert_currency(20, "USD", "EUR")
+			expect(valor).to be_instance_of(Float)
+			expect(valor).to be <  20
+		 end
+		 it "should run convert_currency for USD and USD" do
+		 	valor = @api.convert_currency(20, "USD", "USD")
+			expect(valor).to be(20)
+		 end
+		  it "should run convert_currency for USD and currency not in dicionary hash" do
+		 	valor = @api.convert_currency(20, "USD", "GSF")
+			expect(valor).to be(0)
+		 end
 	end
 end
