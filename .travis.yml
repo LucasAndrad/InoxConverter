@@ -10,14 +10,9 @@ rvm:
 
 before_script:
   - gem install bundler
-  - gem install rubocop rubycritic rspec simplecov
+  - gem install rubocop rubycritic rspec simplecov tzinfo
   - bundle install
 
-
-
-script:
-  - ./build_travis.sh
-  - rspec
 notifications:
   email:
     recipients:
